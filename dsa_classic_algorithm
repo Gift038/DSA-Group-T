@@ -8,7 +8,7 @@ graph_adj_list = {
     7: [(1, 12), (3, 9), (5, 7), (6, 9)]
 }
 
-def tsp_dynamic_programming_fixed_route(graph_adj_list, optimal_route):
+def tsp_dynamic_programming_route(graph_adj_list, optimal_route):
     """
     Calculates the cost of a fixed route through the cities.
     Args: graph_adj_list: The adjacency list representing the graph, optimal_route: The list of cities in the desired order
@@ -35,7 +35,8 @@ def tsp_dynamic_programming_fixed_route(graph_adj_list, optimal_route):
 optimal_route = [1, 2, 4, 6, 7, 5, 3, 1]
 
 # calculate the cost of the fixed route
-min_cost = tsp_dynamic_programming_fixed_route(graph_adj_list, optimal_route)
+min_cost = tsp_dynamic_programming_route(graph_adj_list, optimal_route)
 
 print("Minimum Tour Cost :", min_cost)
 print("Optimal Tour :", optimal_route)
+
