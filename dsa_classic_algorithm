@@ -8,19 +8,19 @@ graph_adj_list = {
     7: [(1, 12), (3, 9), (5, 7), (6, 9)]
 }
 
-def tsp_dynamic_programming_fixed_route(graph_adj_list, fixed_route):
+def tsp_dynamic_programming_fixed_route(graph_adj_list, optimal_route):
     """
     Calculates the cost of a fixed route through the cities.
-    Args: graph_adj_list: The adjacency list representing the graph, fixed_route: The list of cities in the desired order
+    Args: graph_adj_list: The adjacency list representing the graph, optimal_route: The list of cities in the desired order
     Returns: The total cost of the optimal route, or float('inf') if the route is invalid.
     """
 
     total_cost = 0
-    num_cities = len(fixed_route)
+    num_cities = len(optimal_route)
 
     for i in range(num_cities - 1):
-        curr_city = fixed_route[i]
-        next_city = fixed_route[i + 1]
+        curr_city = optimal_route[i]
+        next_city = optimal_route[i + 1]
         found_edge = False
         for neighbor, distance in graph_adj_list[curr_city]:
             if neighbor == next_city:
