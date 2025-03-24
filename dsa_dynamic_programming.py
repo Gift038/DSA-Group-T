@@ -12,8 +12,25 @@ graph_adj_list = {
 }
 
 def tsp_dynamic_programming(graph_adj_list):
-    cities = list(graph_adj_list.keys())
-    n = len(cities)
+    """
+    Solves the TSP using dynamic programming and bitmasking.
+
+    This function calculates the optimal route for visiting all cities exactly once and 
+    returning to the starting city. It uses dynamic programming with memoization to 
+    efficiently compute the minimum tour cost and the corresponding optimal route.
+
+    Args:
+        graph_adj_list (dict): A dictionary representing the adjacency list of the graph, 
+                                where keys are cities and values are lists of tuples representing 
+                                neighboring cities and the associated travel costs.
+
+    Returns:
+        tuple: A tuple containing two elements:
+             optimal_route (list): The list of cities in the optimal route starting and ending at city 1
+             min_cost (int): The minimum cost of the optimal tour.
+    """
+    cities = list(graph_adj_list.keys()) #converts the keys of the graph_adj_list into a list called cities
+    n = len(cities) #calculates the number of cities in the TSP graph
     
     # memoization table to store minimum cost for each subset
     memo = {}
